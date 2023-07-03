@@ -64,10 +64,10 @@ else:
         textpom = TEXTS[volba_textu - 1]
         text = textpom.split()
         for _ in text:
-            if len(_) not in data_graf: data_graf[len(_)] = 1
-            else:  data_graf[len(_)] += 1
-            pocet_slov += 1
             slovo = _.strip(".,")
+            if len(slovo) not in data_graf: data_graf[len(slovo)] = 1
+            else:  data_graf[len(slovo)] += 1
+            pocet_slov += 1
             if slovo.istitle(): zacina_velkym += 1
             if slovo.isupper(): cele_velke += 1
             if slovo.islower(): cele_male += 1
@@ -75,7 +75,8 @@ else:
                 cisla += 1
                 soucet_cisel = soucet_cisel + int(slovo)
         print(f"{pocet_slov}, {zacina_velkym}, {cele_velke}, {cele_male}, {cisla}, {soucet_cisel}")
-        print(data_graf)
+        for klic, data in (sorted(data_graf.items())):
+            print(klic,"|",data*"*","\t\t|",data)
 
             
 
