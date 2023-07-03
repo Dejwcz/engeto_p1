@@ -54,6 +54,7 @@ else:
         print(f"Wrong input, terminating the program..")
         quit(20)    
     else:
+        data_graf = {}
         pocet_slov = 0
         zacina_velkym = 0
         cele_velke = 0
@@ -63,6 +64,8 @@ else:
         textpom = TEXTS[volba_textu - 1]
         text = textpom.split()
         for _ in text:
+            if len(_) not in data_graf: data_graf[len(_)] = 1
+            else:  data_graf[len(_)] += 1
             pocet_slov += 1
             slovo = _.strip(".,")
             if slovo.istitle(): zacina_velkym += 1
@@ -72,6 +75,7 @@ else:
                 cisla += 1
                 soucet_cisel = soucet_cisel + int(slovo)
         print(f"{pocet_slov}, {zacina_velkym}, {cele_velke}, {cele_male}, {cisla}, {soucet_cisel}")
+        print(data_graf)
 
             
 
