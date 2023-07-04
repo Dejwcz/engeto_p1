@@ -32,7 +32,7 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
-users = {"bob" : "123", "ann" : "pass123", "mike" : "pasword123", "liz" : "pas123", "a" : "a"}
+users = {"bob" : "123", "ann" : "pass123", "mike" : "pasword123", "liz" : "pas123",}
 jmeno = input("username: ")
 cara = ("-" * 40)
 pocet_textu = (len(TEXTS))
