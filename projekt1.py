@@ -32,7 +32,7 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
-users = {"bob" : "123", "ann" : "pass123", "mike" : "pasword123", "liz" : "pas123"}
+users = {"bob" : "123", "ann" : "pass123", "mike" : "pasword123", "liz" : "pas123", "a" : "a"}
 jmeno = input("username: ")
 cara = ("-" * 40)
 pocet_textu = (len(TEXTS))
@@ -74,9 +74,21 @@ else:
             if slovo.isnumeric():
                 cisla += 1
                 soucet_cisel = soucet_cisel + int(slovo)
-        print(f"{pocet_slov}, {zacina_velkym}, {cele_velke}, {cele_male}, {cisla}, {soucet_cisel}")
+        print(f"There are {pocet_slov} words in selected text.")
+        print(f"There are {zacina_velkym} titlecase words.")
+        print(f"There are {cele_velke} uppercase words.")
+        print(f"There are {cele_male} lowercase words.")
+        print(f"There are {cisla} numeric strings.")
+        print(f"The sum of all numbers {soucet_cisel}")
+        print(cara)
+        max_bar = max(data_graf.keys()) + 3
+        stred = "OCCURENCES"
+        print(f"LEN|{stred.center(max_bar)}|NR.")
+        print(cara)
         for klic, data in (sorted(data_graf.items())):
-            print(klic,"|",data*"*","\t\t|",data)
+            bar = data * "*"
+            print(f"{str(klic).rjust(3)}|{bar.ljust(max_bar)}|{data}")
+        
 
             
 
